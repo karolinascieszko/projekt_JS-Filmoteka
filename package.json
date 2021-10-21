@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/karolinascieszko/projekt_JS-Filmoteka/issues"
   },
-  "homepage": "https://github.com/karolinascieszko/projekt_JS-Filmoteka#readme",
+  "homepage": "https://karolinascieszko.github.io/projekt_JS-Filmoteka/",
   "devDependencies": {
     "snowpack": "^3.8.8"
   }
