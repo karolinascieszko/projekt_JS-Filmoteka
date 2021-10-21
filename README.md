@@ -1,1 +1,1 @@
-# projekt_JS-Filmoteka
+# Project JS - Team 4
