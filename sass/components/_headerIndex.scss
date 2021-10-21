@@ -1,0 +1,124 @@
+.headerIndex{
+  height: 230px;
+  background-repeat: no-repeat;
+  background-image: url("../../images/headerBackgroundIndex\ 320.png");
+  &__upper{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    display: flex;
+    margin-left: 21px;
+    margin-top: 46px;
+  }
+  &__logoText{
+    display: none;
+  }
+  &__menu{
+    margin-right: 20px;
+    margin-top: 58px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  &__menuLink{
+    font-family: var(--font);
+    color: var(--font-color_header);
+    font-weight: 500;
+  }
+  &__menuLink:first-child{
+    margin-right: 39px;
+  }
+  &__search-form{
+    display: flex;
+    justify-content: center;
+  }
+  &__error{
+    color: var(--error-color);
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .headerIndex{
+    height: 230px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/headerBackgroundIndex\ 768.png");    
+  
+  &__upper{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    display: flex;
+    margin-left: 71px;
+    margin-top: 41px;
+  }
+  &__logoIcon{
+    margin-right: 10px;
+  }
+  &__logoText{
+    display: inline;
+    font-family: var(--font);
+    color: var(--font-color_header);
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0px;
+  }
+  &__menu{
+    margin-right: 76px;
+    margin-top: 58px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  &__menuLink{
+    font-family: var(--font);
+    color: var(--font-color_header);
+    font-weight: 500;
+  }
+  &__menuLink:first-child{
+    margin-right: 39px;
+  }
+}
+}
+@media screen and (min-width: 1024px){
+  .headerIndex{
+    height: 230px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/headerBackgroundIndex\ 1024.png");
+  
+  &__upper{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    margin-left: 71px;
+    margin-top: 41px;
+    display: flex;
+  }
+  &__logoIcon{
+    margin-right: 10px;
+  }
+  &__logoText{
+    display: inline;
+    font-family: var(--font);
+    color: var(--font-color_header);
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0px;
+  }
+  &__menu{
+    margin-right: 71px;
+    margin-top: 58px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  &__menuLink{
+    font-family: var(--font);
+    color: var(--font-color_header);
+    font-weight: 500;
+  }
+  &__menuLink:first-child{
+    margin-right: 39px;
+  }
+}
+}
