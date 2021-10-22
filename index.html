@@ -4,9 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/main.css">
     <title>Filmoteka</title>
   </head>
   <body>
-    Hello!
+    <header>
+      <div class="headerIndex container">
+      <div class="headerIndex__upper">
+        <div class="headerIndex__logo"><img class="headerIndex__logoIcon" width="24px" src="./images/filmIcon.svg"/><p class="headerIndex__logoText">Filmoteka</p></div>
+        <div class="headerIndex__menu">
+          <a class="headerIndex__menuLink"  href="./index.html">Home</a>
+          <a class="headerIndex__menuLink" href="./library.html">my library</a>
+        </div>
+      </div>
+      <form class="headerIndex__search-form" id="search-form">
+        <input
+          id="search"
+          type="text"
+          class="headerIndex__search"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Поиск фильмов"
+          />
+          <button class="headerIndex__submit" type="submit" id="submit"><img width="12px" src="./images/searchIcon.svg"/></button>
+        </form>
+      <p class="headerIndex__error">Search result not successful. Enter the correct movie name and</p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="gallery">
+      </div></div>
+    <footer class="container">
+      <div class="footer">
+        <p class="footer__text">©  2020 | All Rights Reserved | </p>
+        <div class="footer__text"><p> Developed with</p> <img class="footer__heart" width="14px" height="12.75px" src="./images/heartIcon.svg"/><p>by </p><a class="footer__link"  href="">GoIT Students</a></div>
+      </div>
+    </footer>
+    <script src="./js/data.js"></script>
   </body>
 </html>

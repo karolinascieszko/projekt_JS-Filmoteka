@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./sass/main.css">
+    <title>Filmoteka</title>
+  </head>
+  <body>
+    <header>
+      <div class="headerLibrary container">
+        <div class="headerLibrary__upper">
+          <div class="headerLibrary__logo"><img class="headerLibrary__logoIcon" width="24px" src="./images/filmIcon.svg"/><p class="headerLibrary__logoText">Filmoteka</p></div>
+          <div class="headerLibrary__menu">
+            <a class="headerLibrary__menuLink"  href="./index.html">Home</a>
+            <a class="headerLibrary__menuLink" href="./library.html">my library</a>
+          </div>
+        </div>
+        <div class="headerLibrary__buttons">
+          <button class="headerLibrary__btn">watched</button>
+          <button class="headerLibrary__btn">queue</button>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="gallery" data-modal-open>
+      </div></div>
+    <footer class="container">
+      <div class="footer">
+        <p class="footer__text">©  2020 | All Rights Reserved | </p>
+        <div class="footer__text"><p> Developed with</p> <img class="footer__heart" width="14px" height="12.75px" src="./images/heartIcon.svg"/><p>by </p><a class="footer__link"  href="">GoIT Students</a></div>
+      </div>
+    </footer>
+    <div class="is-hidden moddal" data-modal></div>
+    <script src="./js/data.js"></script>
+    <script src="./js/modalLibrary.js"></script>
+  </body>
+</html>
