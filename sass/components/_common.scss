@@ -8,3 +8,11 @@ img {
 a {
   text-decoration: none;
 }
+body{
+  margin-top: 0px;
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}

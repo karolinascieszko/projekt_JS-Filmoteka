@@ -11,28 +11,32 @@
     <title>Filmoteka</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__upper">
-        <div class="header__logo"></div>
-        <div class="header__menu">
-          <a href="./index.html">Home</a>
-          <a href="./library.html">my library</a>
+    <header>
+      <div class="headerLibrary container">
+        <div class="headerLibrary__upper">
+          <div class="headerLibrary__logo"><img class="headerLibrary__logoIcon" width="24px" src="./images/filmIcon.svg"/><p class="headerLibrary__logoText">Filmoteka</p></div>
+          <div class="headerLibrary__menu">
+            <a class="headerLibrary__menuLink"  href="./index.html">Home</a>
+            <a class="headerLibrary__menuLink" href="./library.html">my library</a>
+          </div>
+        </div>
+        <div class="headerLibrary__buttons">
+          <button class="headerLibrary__btn">watched</button>
+          <button class="headerLibrary__btn">queue</button>
         </div>
       </div>
-      <div class="header__buttons">
-        <button>watched</button>
-        <button>queue</button>
-      </div>
     </header>
-
-    <div class="gallery">
-
-    </div>
-
-    <footer class="footer">
-      <p>©  2020 | All Rights Reserved | </p>
-      <p>Developed with </p>
+    <div class="container">
+      <div class="gallery" data-modal-open>
+      </div></div>
+    <footer class="container">
+      <div class="footer">
+        <p class="footer__text">©  2020 | All Rights Reserved | </p>
+        <div class="footer__text"><p> Developed with</p> <img class="footer__heart" width="14px" height="12.75px" src="./images/heartIcon.svg"/><p>by </p><a class="footer__link"  href="">GoIT Students</a></div>
+      </div>
     </footer>
+    <div class="is-hidden moddal" data-modal></div>
     <script src="./js/data.js"></script>
+    <script src="./js/modalLibrary.js"></script>
   </body>
 </html>

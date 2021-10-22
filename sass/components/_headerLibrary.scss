@@ -1,8 +1,8 @@
-.headerIndex{
+.headerLibrary{
   height: 230px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/headerBackgroundIndex\ 320.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../../images/headerBackgroundLibrary\ 320.png");
   &__upper{
     display: flex;
     justify-content: space-between;
@@ -26,63 +26,48 @@
     color: var(--font-color_header);
     font-weight: 500;
   }
+  &__menuLink:first-child{
+    margin-right: 39px;
+  }
   &__menuLink:hover,
   &__menuLink:focus{
     text-decoration: underline solid var(--span-color);
     text-underline-offset: 0.4em;
     text-decoration-thickness: 2px;
   }
-  &__menuLink:first-child{
-    margin-right: 39px;
-  }
-  &__search-form{
+  &__buttons{
     display: flex;
+    margin-top: 49px;
     justify-content: center;
+    gap: 20px;
   }
-  &__error{
-    color: var(--error-color);
-    text-align: center;
+  &__btn{
+    background: transparent;
+    width: 130px;
+    height: 44px;
+    color: var(--font-color_header);
     font-family: var(--font);
-    font-size: 14px;
-    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid var(--font-color_header);
   }
-  &__search{
-    background: transparent;
-    border: none;
-    border-bottom: 0.5px solid gray;
-    width: 280px;
-    height: 22px;
-    font-family: (--font);
-    font-size: 14px; 
-    color: var(--font-color_header);
-  }
-  &__search:focus{
-    outline: none;
-  }
-  &__search::placeholder {
-    color: var(--font-color_header);
-    font-family: (--font);
-    font-size: 14px;
-  }
-  &__search-form{
-    margin-top: 37px;
-    margin-bottom: 22px;
-    margin-left: 20px;
-  }
-  &__submit{
-    background: transparent;
-    border: none;
-    position: relative;
-    right: 22px;
+  &__btn:hover,
+  &__btn:focus{
+    background-color: var(--span-color);
+    border-color: var(--span-color);
+    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
-  .headerIndex{
+  .headerLibrary{
     height: 230px;
-    background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/headerBackgroundIndex\ 768.png");    
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../../images/headerBackgroundLibrary\ 768.png");    
   
   &__upper{
     display: flex;
@@ -118,42 +103,21 @@
   &__menuLink:first-child{
     margin-right: 39px;
   }
-  &__search{
-    background: transparent;
-    border: none;
-    border-bottom: 0.5px solid gray;
-    width: 336px;
-    height: 22px;
-    font-family: (--font);
-    font-size: 14px; 
-    color: var(--font-color_header);
+  &__buttons{
+    gap: 15px;
   }
-  &__search:focus{
-    outline: none;
-  }
-  &__search::placeholder {
-    color: var(--font-color_header);
-    font-family: (--font);
-    font-size: 14px;
-  }
-  &__search-form{
-    margin-top: 37px;
-    margin-bottom: 22px;
-  }
-  &__submit{
-    background: transparent;
-    border: none;
-    position: relative;
-    right: 22px;
+  &__btn{
+    width: 136px;
+    height: 44px;
   }
 }
 }
 @media screen and (min-width: 1024px){
-  .headerIndex{
+  .headerLibrary{
     height: 230px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/headerBackgroundIndex\ 1024.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../../images/headerBackgroundLibrary\ 1024.png");
   
   &__upper{
     display: flex;
@@ -189,33 +153,12 @@
   &__menuLink:first-child{
     margin-right: 39px;
   }
-  &__search{
-    background: transparent;
-    border: none;
-    border-bottom: 0.5px solid gray;
-    width: 336px;
-    height: 22px;
-    font-family: (--font);
-    font-size: 14px; 
-    color: var(--font-color_header);
+  &__buttons{
+    gap: 15px;
   }
-  &__search:focus{
-    outline: none;
-  }
-  &__search::placeholder {
-    color: var(--font-color_header);
-    font-family: (--font);
-    font-size: 14px;
-  }
-  &__search-form{
-    margin-top: 37px;
-    margin-bottom: 22px;
-  }
-  &__submit{
-    background: transparent;
-    border: none;
-    position: relative;
-    right: 22px;
+  &__btn{
+    width: 136px;
+    height: 44px;
   }
 }
 }
