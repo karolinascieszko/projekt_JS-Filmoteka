@@ -26,6 +26,11 @@
     color: var(--font-color_header);
     font-weight: 500;
   }
+  &__menuLink--underline{
+    text-decoration: underline solid var(--span-color);
+    text-underline-offset: 0.4em;
+    text-decoration-thickness: 2px;
+  }
   &__menuLink:hover,
   &__menuLink:focus{
     text-decoration: underline solid var(--span-color);
