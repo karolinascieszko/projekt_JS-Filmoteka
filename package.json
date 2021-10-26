@@ -21,5 +21,8 @@
   "homepage": "https://karolinascieszko.github.io/projekt_JS-Filmoteka/",
   "devDependencies": {
     "snowpack": "^3.8.8"
+  },
+  "dependencies": {
+    "spin.js": "^4.1.1"
   }
 }
