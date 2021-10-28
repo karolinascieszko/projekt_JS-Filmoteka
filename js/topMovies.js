@@ -1,5 +1,5 @@
 
-import{genresID} from './genresID'
+import{genresID} from './genresID.js'
 let markup="";
 const imgURL="https://image.tmdb.org/t/p/w500";
 const gal = document.querySelector('.gallery');
