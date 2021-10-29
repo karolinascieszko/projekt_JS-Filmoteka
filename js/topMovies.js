@@ -1,8 +1,6 @@
-
+import { gal, imgURL } from './utils.js';
 import{genresID} from './genresID.js'
 let markup="";
-const imgURL="https://image.tmdb.org/t/p/w500";
-const gal = document.querySelector('.gallery');
 let page = 1;
 async function topMovie(page) {
   try {
@@ -20,7 +18,7 @@ async function topMovie(page) {
 function renderMovies(movies) {
  let movie = movies.results
   for (const {id,poster_path, original_title, genre_ids, release_date} of movie) {
-    let genre = genresID.filter(genre=>genre_ids.includes(genre.id)).map(genre=>genre.name).join(", ");
+    let genre = genresID.filter(genre=>genre_ids.includes(genre.id)).map(genre=>genre.name).slice(0,3).join(", ");
     let date = release_date.split("-");
     let year = date[0];
      markup+=`
