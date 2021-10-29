@@ -1,13 +1,15 @@
 import {genresID} from './genresID.js'
 import { setPopularMovie} from "./topMovies.js";
-import { indexError,gal,imgURL,imgPlaceholder} from './utils.js';
-
+import { indexError,gal,imgURL,imgPlaceholder,spinner, timeout} from './utils.js';
 indexError.style.display = "none";
 async function fetchMovies(name) {
     try {
+      await spinner.removeAttribute('hidden')
+      await timeout(500)
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=837f028f22fd2591f3672c74a92683e2&language=en-US&query=${name}&page=1&include_adult=false`,
       );
+      await spinner.setAttribute('hidden', '');
       if (!response.ok) {
         throw new Error(response.status);
       }

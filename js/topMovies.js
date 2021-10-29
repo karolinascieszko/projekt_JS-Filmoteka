@@ -1,16 +1,20 @@
-import { gal, imgURL } from './utils.js';
+import { gal, imgURL, spinner, timeout } from './utils.js';
 import{genresID} from './genresID.js'
 let markup="";
 let page = 1;
 async function topMovie(page) {
   try {
+    await spinner.removeAttribute('hidden');
+    await timeout(500);
     const response = await fetch(
       `https://api.themoviedb.org/3/trending/movie/day?api_key=837f028f22fd2591f3672c74a92683e2&page=${page}`
     );
+    await spinner.setAttribute('hidden', '');
     if (!response.ok) {
       throw new Error(response.status);
     }
     return await response.json();
+    
   } catch (err) {
     return console.log(err);
   }

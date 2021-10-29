@@ -1,4 +1,4 @@
-import {moddalWind, imgURL, imgPlaceholder,modal} from "./utils.js"
+import {moddalWind, imgURL, imgPlaceholder,modal,spinner,timeout} from "./utils.js"
 
 export function toggleModal() {
     modal.classList.toggle("is-hidden");
@@ -21,10 +21,12 @@ export function selectId(event) {
 
 export async function fetchMovies(id) {
   try {
-    console.log(id)
+    await spinner.removeAttribute('hidden')
+    await timeout(500)
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=837f028f22fd2591f3672c74a92683e2&language=en-US`,
     );
+    await spinner.setAttribute('hidden', '');
     if (!response.ok) {
       throw new Error(response.status);
     }
