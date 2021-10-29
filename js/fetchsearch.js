@@ -1,10 +1,8 @@
-import{genresID} from './genresID.js'
+import {genresID} from './genresID.js'
 import { setPopularMovie} from "./topMovies.js";
-export const qs = (selector) => document.querySelector(selector);
-const indexError = qs(".headerIndex__error");
-const gal = qs('.gallery');
+import { indexError,gal,imgURL,imgPlaceholder} from './utils.js';
+
 indexError.style.display = "none";
-const imgURL="https://image.tmdb.org/t/p/w500";
 async function fetchMovies(name) {
     try {
       const response = await fetch(
@@ -17,15 +15,12 @@ async function fetchMovies(name) {
     } catch (err) {
       setPopularMovie();
       return console.log(err);
-    }
-  };
+    }};
   export async function eventHandler(event) {
     event.preventDefault();
     let name = await event.currentTarget.elements.searchQuery.value;
     try { let data = await fetchMovies(name);
     let movies = data.results;
-    console.log(movies)
-    
         if (movies.length > 0) {
           renderMovies(movies);
           indexError.style.display = "none";
@@ -34,19 +29,18 @@ async function fetchMovies(name) {
           indexError.style.display = "block";}}
           catch (err) {
             return console.log(err);
-          }
-  }
+          }};
   function renderMovies(movies) {
     let markup = "";
      for (const {id,poster_path, original_title, genre_ids, release_date} of movies) {
        
-       let genre = genresID.filter(genre=>genre_ids.includes(genre.id)).map(genre=>genre.name).join(", ");
+       let genre = genresID.filter(genre=>genre_ids.includes(genre.id)).map(genre=>genre.name).slice(0,3).join(", ");
        let date = release_date.split("-");
        let year = date[0];
-        if(poster_path == null){console.log(poster_path);
+        if(poster_path == null){;
           markup+=`
         <div>
-         <img class="gallery__image" id="${id}" src="https://coutto.net/wp-content/uploads/2021/09/500x735blank.png" alt="plakat" />
+         <img class="gallery__image" id="${id}" src="${imgPlaceholder}" alt="plakat" />
          <h3 class="gallery__title">${original_title}</h3>
          <div class="gallery__decr"><p class="gallery__genre">${genre}</p><p class="gallery__date">${year}</p></div>
         </div>`}
@@ -58,4 +52,4 @@ async function fetchMovies(name) {
         </div>`}
        };
        gal.insertAdjacentHTML("beforeend", markup);
-   }
+   };
