@@ -1,14 +1,15 @@
-import { setPopularMovie} from "./topMovies.js";
-import { eventHandler} from "./fetchsearch.js";
-import { searchForm, gal, openModalBtn,closeModalBtn,modal} from "./utils.js";
+import { setPopularMovie, eventHandler} from "./topMovies.js";
+
+import {nextPage} from './pagination.js'
+import { searchForm, gal, openModalBtn,closeModalBtn,modal, paginationBox} from "./utils.js";
 import {toggleModal, escape, selectId, fetchMovies, renderModal} from "./modalLibrary.js"
-setPopularMovie()
+setPopularMovie(5)
 searchForm.addEventListener('submit', eventHandler);
 searchForm.addEventListener("input", ()=>{
+  while(paginationBox.firstChild){paginationBox.firstChild.remove()}
   while(gal.firstChild){gal.firstChild.remove()}
  });
 
- 
 openModalBtn.addEventListener("click", async (event)=>{
   let id = await selectId(event);
   let movie = await fetchMovies(id);
@@ -17,3 +18,4 @@ openModalBtn.addEventListener("click", async (event)=>{
 });
 closeModalBtn.addEventListener("click", toggleModal());
 modal.addEventListener("click", escape);
+paginationBox.addEventListener("click", nextPage)

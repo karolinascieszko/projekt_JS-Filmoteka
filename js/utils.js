@@ -12,3 +12,6 @@ export const moddalWind = qs('.moddal__grid');
 export const imgURL="https://image.tmdb.org/t/p/w500";
 export const imgPlaceholder="https://fireteller.com/wp-content/uploads/2020/09/Poster_Not_Available2.jpg";
 export const spinner = document.getElementById("spinner");
+export const paginationBox = qs(".pagination");
+export const inputHeader = qs(".headerIndex__search");
+export const paginationItem = document.getElementsByClassName("pagination-item");
