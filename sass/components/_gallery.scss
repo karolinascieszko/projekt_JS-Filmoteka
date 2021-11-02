@@ -12,9 +12,12 @@
     font-family: var(--font);
     color: var(--font-color_main);
     font-size: 12px;
+    max-width: 270px;
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 3px;
+    display: flex;
+    flex-wrap: wrap;
   }
   &__decr {
     display: flex;
@@ -29,10 +32,15 @@
   }
   &__genre {
     margin-right: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 210px;
   }
   &__date {
+    display: flex;
     padding-left: 4px;
     border-left: 1px solid var(--span-color);
+    align-items: center;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {

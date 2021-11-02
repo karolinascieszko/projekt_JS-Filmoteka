@@ -582,9 +582,15 @@ body {
   font-family: var(--font);
   color: var(--font-color_main);
   font-size: 12px;
+  max-width: 270px;
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .gallery__decr {
@@ -603,11 +609,23 @@ body {
 
 .gallery__genre {
   margin-right: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 210px;
 }
 
 .gallery__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-left: 4px;
   border-left: 1px solid var(--span-color);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
