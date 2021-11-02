@@ -22,7 +22,7 @@ export function selectId(event) {
 export async function fetchMovies(id) {
   try {
     await spinner.removeAttribute('hidden')
-    await timeout(500)
+    await timeout(300)
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=837f028f22fd2591f3672c74a92683e2&language=en-US`,
     );
@@ -38,7 +38,7 @@ export async function fetchMovies(id) {
 export async function renderModal (movie){
 let markupSec = ""
 const{poster_path, genres, vote_average, vote_count, popularity, original_title, overview} = movie;
-let gen = genres.map(genre => genre.name).slice(0,3).join(", ")
+let gen = genres.map(genre => genre.name).join(", ")
 if(poster_path == null){;
   markupSec=`
   <img class="moddal__poster" src="${imgPlaceholder}" alt="plakat" />

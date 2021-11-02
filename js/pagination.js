@@ -1,4 +1,4 @@
-import { totalPages, setPopularMovie,setSearchMovie, name} from "./topMovies.js";
+import { totalPages, setPopularMovie,setSearchMovie, name} from "./renderMovies.js";
 import { paginationBox, gal} from './utils.js'
 export let page = 1;
 export function setPage(value) {
@@ -12,7 +12,7 @@ export function renderPagination() {
         <li class="page-item disabled page-item-previous">
           <a class="page-link" href="#" tabindex="-1">
             <svg class="page-icon" width="16" height="16">
-              <use href="./images/pagination/arrows.svg#icon-arrow-left"></use>
+              <use href="./images/arrows.svg#icon-arrow-left"></use>
             </svg>
           </a>
         </li>        
@@ -40,7 +40,7 @@ export function renderPagination() {
         <li class="page-item" data=${page + 1}>
           <a class="page-link" href="#">
             <svg class="page-icon" width="16" height="16">
-                <use href="./images/pagination/arrows.svg#icon-arrow-right"></use>
+                <use href="./images/arrows.svg#icon-arrow-right"></use>
             </svg>
           </a>
         </li>
@@ -54,7 +54,7 @@ export function renderPagination() {
         <li class="page-item page-item-previous" data=${page - 1}>
           <a class="page-link" href="#" tabindex="-1">
             <svg class="page-icon" width="16" height="16">
-              <use href="./images/pagination/arrows.svg#icon-arrow-left"></use>
+              <use href="./images/arrows.svg#icon-arrow-left"></use>
             </svg>
           </a>
         </li>
@@ -90,7 +90,7 @@ export function renderPagination() {
         <li class="page-item" data=${page + 1}>
           <a class="page-link" href="#">
             <svg class="page-icon" width="16" height="16">
-              <use href="./images/pagination/arrows.svg#icon-arrow-right"></use>
+              <use href="./images/arrows.svg#icon-arrow-right"></use>
             </svg>
           </a>
         </li>
@@ -104,10 +104,11 @@ export const nextPage = (e) => {
   while(gal.firstChild){gal.firstChild.remove()}
   currentPageNr = e.target.closest("li");
   page = parseInt(currentPageNr.getAttribute("data"));
-  console.log(page);
   if (name == "") {
     setPopularMovie();
-    console.log(name)
   }
   else setSearchMovie();
 };
+export function pageOne(){
+  page = 1
+}

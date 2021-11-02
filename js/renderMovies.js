@@ -8,7 +8,7 @@ async function topMovie(page) {
   try {
     await spinner.removeAttribute('hidden');
     markup = ""
-    await timeout(500);
+    await timeout(200);
     const response = await fetch(
       `https://api.themoviedb.org/3/trending/movie/day?api_key=837f028f22fd2591f3672c74a92683e2&page=${page}`
     );
@@ -45,7 +45,7 @@ export async function setPopularMovie() {
 async function fetchMovies() {
     try {
       await spinner.removeAttribute('hidden')
-      await timeout(500)
+      await timeout(200)
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=837f028f22fd2591f3672c74a92683e2&language=en-US&query=${name}&page=1&include_adult=false&page=${page}`,
       );
@@ -64,7 +64,6 @@ async function fetchMovies() {
     name = await event.currentTarget.elements.searchQuery.value;
     try { let data = await fetchMovies(name, page);
       totalPages= data.total_pages
-      console.log(totalPages)
     let movies = data.results;
         if (movies.length > 0) {
           renderSerchMovies(movies);
@@ -76,12 +75,11 @@ async function fetchMovies() {
             return console.log(err);
           }};
   export function renderSerchMovies(movies) {
-    console.log(movies)
     renderPagination();
     let markup = "";
      for (const {id,poster_path, original_title, genre_ids, release_date} of movies) {
        
-       let genre = genresID.filter(genre=>genre_ids.includes(genre.id)).map(genre=>genre.name).slice(0,3).join(", ");
+       let genre = genresID.filter(genre=>genre_ids.includes(genre.id)).map(genre=>genre.name).join(", ");
        let date = release_date.split("-");
        let year = date[0];
         if(poster_path == null){;
@@ -102,7 +100,6 @@ async function fetchMovies() {
    };
    export async function setSearchMovie() {
     let movi = await fetchMovies() 
-    console.log(name)
     let movies = await movi.results
     renderSerchMovies(movies) 
    }
