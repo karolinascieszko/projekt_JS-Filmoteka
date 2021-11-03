@@ -1219,6 +1219,10 @@ body {
   line-height: 1.5;
 }
 
+.page-item {
+  margin: 0px 5px;
+}
+
 .pagination-lg .page-item:first-child .page-link {
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
@@ -1289,6 +1293,9 @@ body {
   border: none;
   font-family: var(--font);
   font-weight: 500;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page-link:hover {

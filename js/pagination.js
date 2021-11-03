@@ -47,7 +47,8 @@ export function renderPagination() {
         `;
       }
     }
-  } else {
+  } 
+  else {
     for (let i = page; i < totalPages; i++) {
       for (let j = page - 1; j < page + 3; j++) {
         paginationBox.innerHTML = `
