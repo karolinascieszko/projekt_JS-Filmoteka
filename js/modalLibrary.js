@@ -1,4 +1,5 @@
-import {moddalWind, imgURL, imgPlaceholder,modal,spinner,timeout} from "./utils.js"
+import { moddalWind, imgURL, imgPlaceholder, modal, spinner, timeout } from "./utils.js"
+import { addLocalStorage } from "./addToLocalStorage.js";
 
 export function toggleModal() {
     modal.classList.toggle("is-hidden");
@@ -35,7 +36,7 @@ export async function fetchMovies(id) {
     return console.log(err);
   }};
 
-export async function renderModal (movie){
+export async function renderModal(movie) {
 let markupSec = ""
 const{poster_path, genres, vote_average, vote_count, popularity, original_title, overview} = movie;
 let gen = genres.map(genre => genre.name).join(", ")
@@ -50,7 +51,7 @@ if(poster_path == null){;
   <div class="moddal__data"><p class="moddal__dataTitle moddal__data--4">Genre</p><p class="moddal__dataTxt">${gen}</p></div>
   <h2 class="moddal__about">ABOUT</h2>
   <h3 class="moddal__aboutTxt">${overview}</h3>
-  <div class="moddal__buttons"><button class="moddal__btn">add to Watched</button><button class="moddal__btn">add to queue</button></div>
+  <div class="moddal__buttons"><button class="moddal__btn" watched>add to Watched</button><button class="moddal__btn" queue>add to queue</button></div>
   </div>`}
 else {markupSec=`
 <img class="moddal__poster" src="${imgURL}${poster_path}" alt="plakat" />
@@ -62,7 +63,18 @@ else {markupSec=`
 <div class="moddal__data"><p class="moddal__dataTitle moddal__data--4">Genre</p><p class="moddal__dataTxt">${gen}</p></div>
 <h2 class="moddal__about">ABOUT</h2>
 <h3 class="moddal__aboutTxt">${overview}</h3>
-<div class="moddal__buttons"><button class="moddal__btn">add to Watched</button><button class="moddal__btn">add to queue</button></div>
+<div class="moddal__buttons"><button class="moddal__btn" watched>add to Watched</button><button class="moddal__btn" queue>add to queue</button></div>
 </div>`}
-moddalWind.insertAdjacentHTML("beforeend", markupSec);
+  moddalWind.insertAdjacentHTML("beforeend", markupSec);
+  
+  const modalButtonWatched = document.querySelector("button[watched]");
+  const modalButtonQueue = document.querySelector("button[queue]");
+
+  modalButtonWatched.addEventListener("click", () => {
+    addLocalStorage("watchedLocalStorage", movie.id);
+  });
+
+  modalButtonQueue.addEventListener("click", () => {
+    addLocalStorage("queueLocalStorage", movie.id);
+  });
 }
