@@ -1,5 +1,5 @@
 /* import { watchedMovie, queueMovie } from "./utils.js"; */
-import {gal, imgURL, imgPlaceholder, watchedMovie, queueMovie} from "./utils.js";
+import {gal, imgURL, imgPlaceholder, watchedMovie, queueMovie,moddalWind} from "./utils.js";
 import { openModalBtn,closeModalBtn,modal} from "./utils.js";
 import {toggleModal, escape, selectId, renderModal} from "./modalLibrary.js"
 //Get data from LocalStorage
@@ -78,8 +78,9 @@ watchedMovie.onclick = async function renderW() {
       renderMovies(movie);
   }
 }
-closeModalBtn.onclick = toggleModal();
-modal.addEventListener("click", escape);
+closeModalBtn.addEventListener("click", () => {while(moddalWind.firstChild){moddalWind.firstChild.remove()};
+  toggleModal()});
+modal.addEventListener("click", escape());
 
 openModalBtn.addEventListener("click", async (event)=>{
   let id = await selectId(event);

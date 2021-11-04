@@ -836,6 +836,7 @@ body {
 }
 
 .moddal__poster {
+  background-size: cover;
   width: 240px;
   height: 356px;
   border-radius: 5px;
@@ -979,6 +980,7 @@ body {
     display: flex;
   }
   .moddal__poster {
+    background-size: cover;
     margin-left: 28px;
     margin-right: 32px;
     margin-top: 18px;
@@ -1089,12 +1091,12 @@ body {
     display: flex;
   }
   .moddal__poster {
-    width: 396px;
+    width: 336px;
     height: 478px;
     border-radius: 5px;
     margin-top: 26px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 35px;
+    margin-right: 40px;
   }
   .moddal__close {
     position: relative;

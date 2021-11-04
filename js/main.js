@@ -1,7 +1,7 @@
 import { setPopularMovie, eventHandler} from "./renderMovies.js";
 import {nextPage, pageOne} from './pagination.js'
-import { searchForm, gal, openModalBtn,closeModalBtn,modal, paginationBox} from "./utils.js";
-import {toggleModal, escape, selectId, fetchMovies, renderModal} from "./modalLibrary.js"
+import { searchForm, gal, openModalBtn,closeModalBtn,modal, paginationBox,moddalWind} from "./utils.js";
+import {toggleModal,  selectId, fetchMovies, escape, renderModal} from "./modalLibrary.js"
 setPopularMovie()
 searchForm.addEventListener('submit', eventHandler);
 searchForm.addEventListener("input", ()=>{
@@ -16,6 +16,7 @@ openModalBtn.addEventListener("click", async (event)=>{
   renderModal (movie);
   toggleModal()
 });
-closeModalBtn.addEventListener("click", toggleModal());
-modal.addEventListener("click", escape);
+closeModalBtn.addEventListener("click", () => {while(moddalWind.firstChild){moddalWind.firstChild.remove()};
+  toggleModal()});
+modal.addEventListener("click", escape());
 paginationBox.addEventListener("click", nextPage)

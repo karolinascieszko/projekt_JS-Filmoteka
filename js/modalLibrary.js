@@ -1,4 +1,4 @@
-import { moddalWind, imgURL, imgPlaceholder, modal, spinner, timeout } from "./utils.js"
+import { moddalWind, imgURL, imgPlaceholder, modal, spinner, timeout, } from "./utils.js"
 import { addLocalStorageWached, addLocalStorageQueue } from "./addToLocalStorage.js";
 
 export function toggleModal() {
@@ -7,9 +7,9 @@ export function toggleModal() {
 
 export function escape() {
     while(moddalWind.firstChild){moddalWind.firstChild.remove()}
-    modal.classList.add("is-hidden");
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
+        while(moddalWind.firstChild){moddalWind.firstChild.remove()}
         modal.classList.add("is-hidden");
       }
     });
