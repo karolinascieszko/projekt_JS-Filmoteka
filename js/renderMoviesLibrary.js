@@ -1,12 +1,7 @@
-import { watchedMovie, queueMovie } from "./utils.js";
-import {
-  gal,
-  imgURL,
-  timeout,
-  indexError,
-  imgPlaceholder,
-} from "./utils.js";
-
+/* import { watchedMovie, queueMovie } from "./utils.js"; */
+import {gal, imgURL, imgPlaceholder, watchedMovie, queueMovie} from "./utils.js";
+import { openModalBtn,closeModalBtn,modal} from "./utils.js";
+import {toggleModal, escape, selectId, renderModal} from "./modalLibrary.js"
 //Get data from LocalStorage
 const storage = (key) => {
     const memory = localStorage.getItem(key);
@@ -17,12 +12,6 @@ const storage = (key) => {
         console.log(error.message);
     }
 };
-
-
-//Render movie after clicking
-watchedMovie.addEventListener("click", render("watchedLocalStorage"));
-queueMovie.addEventListener("click", render("queueLocalStorage"));
-
 
 //fetch movies
 async function fetchMovies(id) {
@@ -72,11 +61,34 @@ function renderMovies(movies) {
 }
 
 //main function
-async function render(key) {
-    const saved = storage(key);
+queueMovie.onclick = async function renderQ() {
+  while(gal.firstChild){gal.firstChild.remove()};
+    let saved = storage("queueLocalStorage");
+    console.log(saved)
     for (const i of saved) {
         const movie = await fetchMovies(i);
         console.log(movie);
         renderMovies(movie);
     }
 }
+
+watchedMovie.onclick = async function renderW() {
+  while(gal.firstChild){gal.firstChild.remove()};
+  let saved = storage("watchedLocalStorage");
+  console.log(saved)
+  for (const i of saved) {
+      const movie = await fetchMovies(i);
+      console.log(movie);
+      renderMovies(movie);
+  }
+}
+closeModalBtn.addEventListener("click", toggleModal());
+modal.addEventListener("click", escape);
+
+openModalBtn.addEventListener("click", async (event)=>{
+  let id = await selectId(event);
+  console.log(id)
+  let movie = await fetchMovies(id);
+  renderModal (movie);
+  toggleModal()
+});
