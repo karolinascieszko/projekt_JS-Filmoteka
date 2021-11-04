@@ -80,12 +80,14 @@
     margin-left: 20px;
   }
   &__aboutTxt{
+    overflow: auto;
     font-family: var(--font);
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
     margin-left: 20px;
     width: 240px;
+    max-height: 235px;
     margin-bottom: 21px;
   }
   &__dataTitle{
