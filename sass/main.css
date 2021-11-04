@@ -880,22 +880,14 @@ body {
 
 .moddal__aboutTxt {
   overflow: auto;
-<<<<<<< Updated upstream
-=======
   max-height: 160px;
->>>>>>> Stashed changes
   font-family: var(--font);
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
   margin-left: 20px;
   width: 240px;
-<<<<<<< Updated upstream
-  max-height: 235px;
-  margin-bottom: 21px;
-=======
   margin-bottom: 16px;
->>>>>>> Stashed changes
 }
 
 .moddal__dataTitle {
