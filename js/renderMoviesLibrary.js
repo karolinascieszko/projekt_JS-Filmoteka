@@ -78,12 +78,12 @@ watchedMovie.onclick = async function renderW() {
       renderMovies(movie);
   }
 }
-closeModalBtn.addEventListener("click", toggleModal());
+closeModalBtn.onclick = toggleModal();
 modal.addEventListener("click", escape);
 
 openModalBtn.addEventListener("click", async (event)=>{
   let id = await selectId(event);
   let movie = await fetchMovies(id);
-  renderModal (movie);
+  renderModal(movie);
   toggleModal()
 });
