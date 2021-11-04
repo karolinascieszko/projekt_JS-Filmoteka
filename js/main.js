@@ -1,11 +1,12 @@
 import { setPopularMovie, eventHandler} from "./renderMovies.js";
 import {nextPage, pageOne} from './pagination.js'
-import { searchForm, gal, openModalBtn,closeModalBtn,modal, paginationBox,moddalWind} from "./utils.js";
+import { searchForm, gal, openModalBtn,closeModalBtn,modal, paginationBox,moddalWind,indexError} from "./utils.js";
 import {toggleModal,  selectId, fetchMovies, escape, renderModal} from "./modalLibrary.js"
 setPopularMovie()
 searchForm.addEventListener('submit', eventHandler);
 searchForm.addEventListener("input", ()=>{
   pageOne();
+  indexError.style.display = "none";
   while(paginationBox.firstChild){paginationBox.firstChild.remove()}
   while(gal.firstChild){gal.firstChild.remove()}
  });
