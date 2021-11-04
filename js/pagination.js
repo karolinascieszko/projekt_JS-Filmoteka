@@ -73,10 +73,10 @@ export function renderPagination() {
     ${leftArrow}${pageFirst}${hide}${startMarkup.join(" ")}${rightArrow}
     `;
   } else if (page == totalPages - 2) {
-    listPagesStart = [`${page - 1}`, `${page}`, `${page + 1}`, `${page + 2}`];
+    pagesListBegin = [`${page - 1}`, `${page}`, `${page + 1}`, `${page + 2}`];
     markup();
     paginationBox.innerHTML = `
-    ${arrowLeft}${pageFirst}${hide}${startMarkup.join(" ")}${rightArrow}
+    ${leftArrow}${pageFirst}${hide}${startMarkup.join(" ")}${rightArrow}
     `;
   } else if (page == totalPages - 3) {
     pagesListBegin = [
