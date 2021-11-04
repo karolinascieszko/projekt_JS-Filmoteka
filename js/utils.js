@@ -15,5 +15,5 @@ export const spinner = document.getElementById("spinner");
 export const paginationBox = qs(".pagination");
 export const inputHeader = qs(".headerIndex__search");
 export const paginationItem = document.getElementsByClassName("pagination-item");
-export const watchedMovie = qs("button[watched]");
-export const queueMovie = qs("button[queue]");
+export const watchedMovie = document.querySelector('#btnW');
+export const queueMovie = document.querySelector('#btnQ');

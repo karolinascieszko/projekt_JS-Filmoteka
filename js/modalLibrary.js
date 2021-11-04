@@ -1,5 +1,5 @@
 import { moddalWind, imgURL, imgPlaceholder, modal, spinner, timeout } from "./utils.js"
-import { addLocalStorage } from "./addToLocalStorage.js";
+import { addLocalStorageWached, addLocalStorageQueue } from "./addToLocalStorage.js";
 
 export function toggleModal() {
     modal.classList.toggle("is-hidden");
@@ -69,12 +69,12 @@ else {markupSec=`
   
   const modalButtonWatched = document.querySelector("button[watched]");
   const modalButtonQueue = document.querySelector("button[queue]");
-
+  
   modalButtonWatched.addEventListener("click", () => {
-    addLocalStorage("watchedLocalStorage", movie.id);
+    addLocalStorageWached("watchedLocalStorage", movie.id);
   });
 
   modalButtonQueue.addEventListener("click", () => {
-    addLocalStorage("queueLocalStorage", movie.id);
+    addLocalStorageQueue("queueLocalStorage", movie.id);
   });
 }
