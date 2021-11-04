@@ -46,12 +46,20 @@ function renderMovies(movies) {
       .join(", ");
     let date = release_date.split("-");
     let year = date[0];
+    if (poster_path == null) {
     markup += `
      <div>
-      <img class="gallery__image" id="${id}" src="${imgURL}${poster_path}" alt="plakat" />
+      <img class="gallery__image" id="${id}" src="${imgPlaceholder}" alt="plakat" />
       <h3 class="gallery__title">${original_title}</h3>
       <div class="gallery__decr"><p class="gallery__genre">${genre}</p><p class="gallery__date">${year}</p></div>
      </div>`;
+    }
+    else{ markup += `
+    <div>
+     <img class="gallery__image" id="${id}" src="${imgURL}${poster_path}" alt="plakat" />
+     <h3 class="gallery__title">${original_title}</h3>
+     <div class="gallery__decr"><p class="gallery__genre">${genre}</p><p class="gallery__date">${year}</p></div>
+    </div>`;}
   }
   gal.insertAdjacentHTML("beforeend", markup);
 }
