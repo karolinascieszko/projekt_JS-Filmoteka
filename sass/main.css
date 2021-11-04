@@ -283,6 +283,10 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .disabled,
+  .hide {
+    display: inline-block;
+  }
   .headerIndex {
     height: 230px;
     background-repeat: no-repeat;
