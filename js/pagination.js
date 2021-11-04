@@ -64,19 +64,19 @@ export function renderPagination() {
     pagesListBegin = [`${page - 2}`, `${page - 1}`, `${page}`];
     markup();
     paginationBox.innerHTML = `
-    ${leftArrow}${pageFirst}${hide}${markupStart.join(" ")}
+    ${leftArrow}${pageFirst}${hide}${startMarkup.join(" ")}
     `;
   } else if (page == totalPages - 1) {
     pagesListBegin = [`${page - 1}`, `${page}`, `${page + 1}`];
     markup();
     paginationBox.innerHTML = `
-    ${leftArrow}${pageFirst}${hide}${markupStart.join(" ")}${rightArrow}
+    ${leftArrow}${pageFirst}${hide}${startMarkup.join(" ")}${rightArrow}
     `;
   } else if (page == totalPages - 2) {
     listPagesStart = [`${page - 1}`, `${page}`, `${page + 1}`, `${page + 2}`];
     markup();
     paginationBox.innerHTML = `
-    ${arrowLeft}${pageFirst}${hide}${markupStart.join(" ")}${rightArrow}
+    ${arrowLeft}${pageFirst}${hide}${startMarkup.join(" ")}${rightArrow}
     `;
   } else if (page == totalPages - 3) {
     pagesListBegin = [
