@@ -64,10 +64,8 @@ function renderMovies(movies) {
 queueMovie.onclick = async function renderQ() {
   while(gal.firstChild){gal.firstChild.remove()};
     let saved = storage("queueLocalStorage");
-    console.log(saved)
     for (const i of saved) {
         const movie = await fetchMovies(i);
-        console.log(movie);
         renderMovies(movie);
     }
 }
@@ -75,20 +73,17 @@ queueMovie.onclick = async function renderQ() {
 watchedMovie.onclick = async function renderW() {
   while(gal.firstChild){gal.firstChild.remove()};
   let saved = storage("watchedLocalStorage");
-  console.log(saved)
   for (const i of saved) {
       const movie = await fetchMovies(i);
-      console.log(movie);
       renderMovies(movie);
   }
 }
-closeModalBtn.addEventListener("click", toggleModal());
+closeModalBtn.onclick = toggleModal();
 modal.addEventListener("click", escape);
 
 openModalBtn.addEventListener("click", async (event)=>{
   let id = await selectId(event);
-  console.log(id)
   let movie = await fetchMovies(id);
-  renderModal (movie);
+  renderModal(movie);
   toggleModal()
 });

@@ -38,8 +38,8 @@
     width: 240px;
     height: 356px;
     border-radius: 5px;
-    margin-top: 26px;
-    margin-bottom: 30.5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     margin-left: 20px;
   }
   &__close{
@@ -55,7 +55,7 @@
     font-size: 20px;
     font-weight: 500;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   &__data{
     display: flex;
@@ -80,13 +80,15 @@
     margin-left: 20px;
   }
   &__aboutTxt{
+    overflow: auto;
+    max-height: 160px;
     font-family: var(--font);
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
     margin-left: 20px;
     width: 240px;
-    margin-bottom: 21px;
+    margin-bottom: 16px;
   }
   &__dataTitle{
     font-family: var(--font);
